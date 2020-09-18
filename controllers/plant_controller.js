@@ -15,6 +15,23 @@ router.get('/new', (req, res) => {
       })
   })
 })
+//________________
+//show.ejs
+//________________
+router.get('/:id', (req, res) => {
+  // if(req.session.currentUser) {
+  Plant.findById(req.params.id, (error, foundPlant) => {
+    res.render(
+      'plant/show.ejs', {
+        plant:foundPlant,
+        // currentUser: req.session.currentUser
+      })
+  })
+// } else {
+    // res.redirect('/session/new')
+    }
+  // }
+)
 
 //___________________
 // edit.ejs

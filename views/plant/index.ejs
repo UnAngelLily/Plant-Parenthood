@@ -2,18 +2,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Plant Directoryx</title>
+    <title>Plant Directory</title>
   </head>
   <body>
     <h1>Plant Directory</h1>
     <ul>
       <% for (let i = 0; i < plant.length; i++) { %>
         <li>
-          <a href="/plant/<%=plant[i].id%>"
+          <a href="/plant/<%=plant[i].id%>">
             <%=plant[i].name;%>
           </ a>
           <form action="/plant<%=plant[i].id%>?_method=DELETE" method="POST">
-            <input type="submit value="DELETE" />
+            <button><input type="submit value="DELETE" /></button>
           </form>
           <a href="/plant/<%=plant[i].id%>/edit">Edit Plant Entries</a>
         </li>
