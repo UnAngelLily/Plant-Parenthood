@@ -12,8 +12,8 @@
           <a href="/plant/<%=plant[i].id%>">
             <%=plant[i].name;%>
           </ a>
-          <form action="/plant<%=plant[i].id%>?_method=DELETE" method="POST">
-            <button><input type="submit value="DELETE" /></button>
+          <form action="/plant/<%=plant[i].id%>?_method=DELETE" method="POST">
+            <button><input type="submit" value="DELETE" /></button>
           </form>
           <a href="/plant/<%=plant[i].id%>/edit">Edit Plant Entries</a>
         </li>

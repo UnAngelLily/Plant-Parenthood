@@ -70,7 +70,7 @@ app.use('/plant', plantController)
 
 //Route to redirect user
 app.get('/' , (req, res) => {
-  res.redirect('/plant')
+  res.redirect('plant/')
 })
 
 //seed to db

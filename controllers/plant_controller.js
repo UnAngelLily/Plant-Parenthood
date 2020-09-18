@@ -87,7 +87,7 @@ router.put('/:id', (req, res) => {
 // delete route
 // __________________
 router.delete('/:id', (req, res) => {
-  plant.findByIdAndRemove(req.params.id, (err, data) => {
+  Plant.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect('/plant')
   })
 })
