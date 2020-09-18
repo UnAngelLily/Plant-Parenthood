@@ -2,16 +2,35 @@
 //Dependencies
 //___________________
 const express = require('express'); //access to express library
+const session = require('express-session');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
+
 //___________________
-//Port
+//Configuration
 //___________________
-// Allow use of Heroku's port or your own local port, depending on the environment
-const PORT = process.env.PORT || 3003; //control of the PORT, 3003 is the fall back PORT
+const app = express();
+const db=mongoose.connectio
+const PORT = process.env.PORT || 3003; //control of the PORT, 3003 is the fall back PORT // Allow use of Heroku's port or your own local port, depending on the environment
+
+//___________________
+//Middleware
+//___________________
+app.use(methodOverride('_method'));
+app.use(express.urlencoded({extended:true}))
+//use public folder for static assets
+app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings, get's data forms as objects - access to key value pairs i req.body
+app.use(express.static('public')); //serve up static files like css, put the items in folder called public
+app.use(session({ //login and crypt the session
+  secret: process.env.SECRET,
+  resave:false,
+  saveUninitalized: false
+  })
+)
+
 
 //___________________
 //Database
@@ -33,11 +52,10 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //Middleware
 //___________________
 
-//use public folder for static assets
-app.use(express.static('public')); //serve up static files like css, put the items in folder called public
+
 
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
-app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings, get's data forms as objects - access to key value pairs i req.body
+
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 
 //use method override
