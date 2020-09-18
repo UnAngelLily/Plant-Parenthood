@@ -79,7 +79,7 @@ router.put('/:id', (req, res) => {
     req.body,
     {new:true},
     (err, updateModel) => {
-      res.redirect('plant')
+      res.redirect('/plant')
     })
 })
 
