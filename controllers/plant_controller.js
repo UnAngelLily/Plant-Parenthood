@@ -77,7 +77,7 @@ router.put('/:id', (req, res) => {
   Plant.findByIdAndUpdate(
     req.params.id,
     req.body,
-    {new:ture},
+    {new:true},
     (err, updateModel) => {
       res.redirect('plant')
     })
