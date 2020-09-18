@@ -1,4 +1,4 @@
-const bycrypt = require('bcyrpt')
+const bcrypt = require('bcrpt')
 const express = require('express')
 const users = express.Router()
 const User = require('../models/users.js')
@@ -14,12 +14,12 @@ users.get('/new', (req, res) => {
 users.post('/', (req, res) => {
   // overwrites user password with the hashed password, then passes that into the database
   req.body.password =
-  bycrypt.hashSync(req.body.password,
-  bycrypt.genSaltSync(10))
+  bcrypt.hashSync(req.body.password,
+  bcrypt.genSaltSync(10))
   User.create(req.body, (err, createdUser) => {
     console.log('user is created', createdUser)
     res.redirect('/')
   })
 })
 
-module.exports = users 
+module.exports = users

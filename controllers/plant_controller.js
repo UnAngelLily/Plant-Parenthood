@@ -34,7 +34,7 @@ router.get('/:id/edit', (req, res) => {
 // index route
 // _________________
 router.get('/', (req, res) => {
-  Plant.find{}, (err, allPlant) => {
+  Plant.find({}, (err, allPlant) => {
     res.render(
       'plant/index.ejs',
       {

@@ -4,7 +4,7 @@ const sessions = express.Router()
 const User = require('../models/users.js')
 
 // the new users form
-sessions.get('/new', (req.res) => {
+sessions.get('/new', (req, res) => {
   res.render('sessions/new.ejs', {
     currentUser: req.session.currentUser
   })
@@ -12,7 +12,7 @@ sessions.get('/new', (req.res) => {
 
 sessions.post('/', (req, res) => {
     // look for the users
-    User.findOne({username: req.body.username}, (err.foundUser) => {
+    User.findOne({username: req.body.username}, (err, foundUser) => {
       //  database has an error if mongod wasn't initalized
       if (err) {
         console.log(err)
@@ -25,7 +25,7 @@ sessions.post('/', (req, res) => {
         req.session.currentUser = foundUser
         res.redirect('/')
       } else {
-        res.send('<a href="/">Password does not match</ a>'>'
+        res.send('<a href="/">Password does not match</ a>')
       }
     }
   })

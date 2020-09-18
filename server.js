@@ -5,15 +5,13 @@ const express = require('express'); //access to express library
 const session = require('express-session');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
-const app = express ();
-const db = mongoose.connection;
 require('dotenv').config()
 
 //__________________
 //Configuration
 //__________________
 const app = express();
-const db=mongoose.connectio
+const db=mongoose.connection
 const PORT = process.env.PORT || 3003; // control of the PORT, 3003 is the fall back PORT // Allow use of Heroku's port or your own local port, depending on the environment
 
 //__________________
@@ -52,11 +50,11 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // Controllers
 //__________________
 //Routes located in Controllers directory
-const plantController = require('./controllers/plant.js')
+const plantController = require('./controllers/plant_controller.js')
 app.use('/plant', plantController)
 const sessionsController = require('./controllers/sessions_controller.js')
 app.use('/sessions', sessionsController)
-const usersController = require('./contollers/users_controllers.js')
+const usersController = require('./contollers/users_controller.js')
 
 //Route to redirect user
 app.get('/' , (req, res) => {
