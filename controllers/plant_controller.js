@@ -11,7 +11,7 @@ router.get('/new', (req, res) => {
       'plant/new.ejs',
       {
         plant:foundPlant,
-        currentUser:req.session.currentUser
+        // currentUser:req.session.currentUser
       })
   })
 })
@@ -25,7 +25,7 @@ router.get('/:id/edit', (req, res) => {
       'plant/edit.ejs',
       {
         plant:foundPlant,
-        currentUser: req.session.currentUser
+        // currentUser: req.session.currentUser
       })
   })
 })
@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
       'plant/index.ejs',
       {
         plant:allPlant,
-        currentUser: req.session.currentUser
+        // currentUser: req.session.currentUser
       })
   })
 })
