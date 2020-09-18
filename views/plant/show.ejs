@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Plant Entry Information</title>
+  </head>
+  <body>
+    <h1>Plant Entry Information</h1>
+    name:<%=plant.name%>
+
+<!-- add more plant information  --%>
+
+    <button type="button" name="button"><a href="/plant/<%=plant._id%>/edit">Edit</a></button>
+
+      <form action="/plant/<%=plant._id%>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE"/ >
+      </form>
+    <nav>
+      <button><a href="/plant/">Back to Plant Directory</a></button>
+    </nav>
+  </body>
+</html>

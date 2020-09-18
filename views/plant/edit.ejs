@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Plant Entry</title>
+  </head>
+  <body>
+    <h1>Edit Plant Entry</h1>
+    <form action="/plant/<%=log.id%>?_method=PUT" method="POST">
+      name:<input type="text" name="name" value="" /><br />
+
+<!-- Add more form information -->
+
+    <input type="submit" value="Submit Changes" />
+  </body>
+</html>

@@ -9,22 +9,22 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 
-//___________________
+//__________________
 //Configuration
-//___________________
+//__________________
 const app = express();
 const db=mongoose.connectio
-const PORT = process.env.PORT || 3003; //control of the PORT, 3003 is the fall back PORT // Allow use of Heroku's port or your own local port, depending on the environment
+const PORT = process.env.PORT || 3003; // control of the PORT, 3003 is the fall back PORT // Allow use of Heroku's port or your own local port, depending on the environment
 
-//___________________
+//__________________
 //Middleware
-//___________________
+//__________________
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:true}))
-//use public folder for static assets
-app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings, get's data forms as objects - access to key value pairs i req.body
+// use public folder for static assets
+app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 app.use(express.static('public')); //serve up static files like css, put the items in folder called public
-app.use(session({ //login and crypt the session
+app.use(session({ // login and crypt the session
   secret: process.env.SECRET,
   resave:false,
   saveUninitalized: false
@@ -32,9 +32,9 @@ app.use(session({ //login and crypt the session
 )
 
 
-//___________________
+//__________________
 //Database
-//___________________
+//__________________
 // How to connect to the database either via heroku or locally
 const MONGODB_URI = process.env.MONGODB_URI; // this should match the .env file
 
@@ -48,28 +48,28 @@ db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
-//___________________
-//Middleware
-//___________________
+//__________________
+// Controllers
+//__________________
+//Routes located in Controllers directory
+const plantController = require('./controllers/plant.js')
+app.use('/plant', plantController)
+const sessionsController = require('./controllers/sessions_controller.js')
+app.use('/sessions', sessionsController)
+const usersController = require('./contollers/users_controllers.js')
 
-
-
-// populates req.body with parsed info from forms - if no data from forms will return an empty object {}
-
-app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
-
-//use method override
-app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form, allows us to delete (DELETE), update(PUT)
-
-//___________________
-// Routes
-//___________________
-//localhost:3000
+//Route to redirect user
 app.get('/' , (req, res) => {
-  res.send('Hello World!');
-});
+  res.redirect('plant/')
+})
 
-//___________________
+//seed to db
+// Log.create(logSeed, (err, data) => {
+//   if (err) console.log(err.message)
+//   console.log('added provided product data')
+// })
+
+//__________________
 //Listener
-//___________________
+//__________________
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
