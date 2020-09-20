@@ -5,16 +5,56 @@
     <title>Plant Entry Information</title>
   </head>
   <body>
-    <h1>Plant Entry Information</h1>
-    name: <%=plant.name%>
+  <h3>Plant Name Information</h3>
 
-<!-- add more plant information  -->
+    Name: <%=plant.name%><br />
+    Botanical Name: <%=plant.botanicalname%><br />
+    Family Name: <%=plant.familyname%><br />
+
+    <%=plant.currentimage%><br />
+
+  <h3>General Appearance</h3>
+
+    Location of Origin: <%=plant.origin%><br />
+    Expected Growth: <%=plant.expectedgrowth%><br />
+    Shape: <%=plant.leafshape%><br />
+    Color: <%=plant.color%><br />
+<!--    Bloom: <%if(plant.bloom === true) { %>
+        Plant Flowers
+      <% } else { %>
+        Plant does not bloom
+      <% } %><br /> -->
+    Blooming Season and Condition: <%=plant.bloomingseason%><br />
+
+  <h3>Care Taking Instruction</h3>
+
+    Soil Type: <%=plant.soiltype%><br />
+    Humidity : <%=plant.humidity%><br />
+    Temperature: <%=plant.temperature%><br />
+    Light: <%=plant.light%><br />
+    Water: <%=plant.water%><br />
+    Pot Type: <%=plant.pottype%><br />
+    Repotting: <%=plant.repotting%><br />
+    Propagation: <%=plant.propagation%><br />
+    Common Issues: <%=plant.commonissues%><br />
+
+  <h3>Acquired Information</h3>
+
+    Date Acquired: <%=plant.dateacquired%><br />
+    Store Acquired: <%=plant.storeacquired%><br />
+    <%=plant.firstimage%><br />
+
+<!-- set an event listener to turn in to a carosuel -->
+  <h3>Plant Entry</h3>
+
+    Last Water: <%=plant.lastwatered%><br />
+    Last Repotted: <%=plant.lastrepotting%><br />
+    Entry Date: <%=plant.entrydate%><br />
+    <%=plant.updateimage%><br />
+    Entry: <%=plant.entry%><br />
+
   <button type="button" name="button"><a href="/plant/<%=plant._id%>/edit">Edit</a></button>
   <br />
-<!--  <form action="/plant/
-  <%=plant._id%>?_method=DELETE" method="POST">
-    <input type="subit" value="DELETE"/>
-  </form> this doesn't work or show up on the page -->
     <nav>
       <button><a href="/plant/">Back to Plant Directory</a></button>
     </nav>

@@ -5,9 +5,47 @@
     <title>New Plant</title>
   </head>
   <body>
-      <h1>New Plant</h1>
+  <h1>New Plant</h1>
+    <h3>Plant Name Information</h3>
       <form action="/plant" method="POST">
-        Name:<input type="text" name="name" /><br />
+       Name:<input type="text" name="name" /><br />
+       Botanical Name:<input type="text" name="botanicalname" /><br />
+       Family Name:<input type="text" name="familyname" /><br />
+
+
+        Recent Photo of Plant:<input type="text" name="currentimage" /><br />
+
+      <h3>General Appearance</h3>
+        Origin:<input type="text" name="origin" /><br />
+        Expected Growth:<input type="text" name="expectedgrowth" /><br />
+        Leaf Shape:<input type="text" name="leafshape" /><br />
+        Color:<input type="text" name="color" /><br />
+      <!--  Bloom:<input type="checkbox" name="bloom" /><br > -->
+        Blooming Season<input type="text" name="bloomingseason" /><br>
+
+      <h3>Care Taking Instructions</h3>
+        Soil Type:<input type="text" name="soiltype" /><br />
+        Humidity Level:<input type="text" name="humidity" /><br />
+        Temperature:<input type="text" name="temperature" /><br />
+        Light:<input type="text" name="light" /><br />
+        Water:<input type="text" name="water" /><br />
+        Pot Type:<input type="text" name="pottype" /><br />
+        When to Repot:<input type="text" name="repotting" /><br />
+        Propagation:<input type="text" name="propagation" /><br />
+        Common Issues:<input type="text" name="commonissues" /><br />
+
+      <h3>Acquired Information</h3>
+        Date Acquired:<input type="text" name="dateacquired" /><br />
+        Store Acquired From:<input type="text" name="storeacquired" /><br />
+        Image of when acquired:<input type="text" name="firstimage" /><br />
+
+      <h3>Plant Entry</h3>
+        Last Date Watered:<input type="text" name="lastwatered" /><br />
+        Last Date Repotted:<input type="text" name="lastrepotting" /><br />
+        Entry Date:<input type="text" name="entrydate" /><br />
+        Image Update:<input type="text" name="updateimage" /><br />
+        Entry:<input type="text" name="entry" /><br />
+
         <button><input type="submit" value="Add new plant" /></button>
       </form>
     <button><a href="/plant">Back to Plant Director</a ></button>

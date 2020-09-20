@@ -2,14 +2,50 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Edit Plant Entry</title>
+    <title>Edit Plant Information</title>
   </head>
   <body>
-    <h1>Edit Plant Entry</h1>
+    <h1>Edit Plant Namey</h1>
     <form action="/plant/<%=plant.id%>?_method=PUT" method="POST">
-      name:<input type="text" name="name" value=""/><br />
+      Name:<input type="text" name="name" value=""/><br />
+      Botanical Name:<input type="text" name="botanicalname" value=""/><br />
+      Family Name:<input type="text" name="familyname" value=""/><br />
 
-<!-- Add more form information -->
+
+      Recent Photo of Plant:<input type="text" name="currentimage" value=""/><br />
+
+    <h3>Edit General Appearance</h3>
+      Origin:<input type="text" name="origin" value=""/><br />
+      Expected Growth:<input type="text" name="expectedgrowth" value=""/><br />
+      Leaf Shape:<input type="text" name="leafshape" value=""/><br />
+      Color:<input type="text" name="color" value=""/><br />
+<!--      Bloom?:
+        <input type="checkbox" name="bloom"
+          <%if(plant.bloom === true) { %> checked <% } %> /><br /> -->
+      Blooming Season<input type="text" name="bloomingseason" value=""/><br />
+
+    <h3>Edit Care Taking Information</h3>
+      Soil Type:<input type="text" name="soiltype" value=""/><br />
+      Humidity Level:<input type="text" name="humidity" value=""/><br />
+      Temperature:<input type="text" name="temperature" value=""/><br />
+      Light:<input type="text" name="light" value=""/><br />
+      Water:<input type="text" name="water" value=""/><br />
+      Pot Type:<input type="text" name="pottype" value=""/><br />
+      When to Repot:<input type="text" name="repotting" value=""/><br />
+      Propagation:<input type="text" name="propagation" value=""/><br />
+      Common Issues:<input type="text" name="commonissues" value=""/><br />
+
+    <h3>Edit Plant Acquired</h3>
+      Date Acquired:<input type="text" name="dateacquired" value=""/><br />
+      Store Acquired From:<input type="text" name="storeacquired" value=""/><br />
+      Image of when acquired:<input type="text" name="firstimage" value=""/><br />
+
+    <h3>Edit Plant Entry</h3>
+      Last Date Watered:<input type="text" name="lastwatered" value=""/><br />
+      Last Date Repotted:<input type="text" name="lastrepotting" value=""/><br />
+      Entry Date:<input type="text" name="entrydate" value=""/><br />
+      Image Update:<input type="text" name="updateimage" value=""/><br />
+      Entry:<input type="text" name="entry" value=""/><br />
 
     <input type="submit" value="Submit Changes" />
     </form>
