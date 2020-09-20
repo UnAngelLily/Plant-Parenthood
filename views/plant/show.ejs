@@ -11,19 +11,19 @@
     Botanical Name: <%=plant.botanicalname%><br />
     Family Name: <%=plant.familyname%><br />
 
-    <%=plant.currentimage%><br />
+    <img src="<%=plant.currentimage%>"><br />
 
   <h3>General Appearance</h3>
 
-    Location of Origin: <%=plant.origin%><br />
+    Location of Origin: <%=plant.origin%> <br />
     Expected Growth: <%=plant.expectedgrowth%><br />
     Shape: <%=plant.leafshape%><br />
     Color: <%=plant.color%><br />
-<!--    Bloom: <%if(plant.bloom === true) { %>
+    Bloom: <%if(plant.bloom === true) { %>
         Plant Flowers
       <% } else { %>
         Plant does not bloom
-      <% } %><br /> -->
+      <% } %><br />
     Blooming Season and Condition: <%=plant.bloomingseason%><br />
 
   <h3>Care Taking Instruction</h3>
@@ -42,7 +42,7 @@
 
     Date Acquired: <%=plant.dateacquired%><br />
     Store Acquired: <%=plant.storeacquired%><br />
-    <%=plant.firstimage%><br />
+    <img src="<%=plant.firstimage%>"><br />
 
 <!-- set an event listener to turn in to a carosuel -->
   <h3>Plant Entry</h3>
@@ -50,7 +50,7 @@
     Last Water: <%=plant.lastwatered%><br />
     Last Repotted: <%=plant.lastrepotting%><br />
     Entry Date: <%=plant.entrydate%><br />
-    <%=plant.updateimage%><br />
+    <img src="<%=plant.updateimage%>"><br />
     Entry: <%=plant.entry%><br />
 
   <button type="button" name="button"><a href="/plant/<%=plant._id%>/edit">Edit</a></button>

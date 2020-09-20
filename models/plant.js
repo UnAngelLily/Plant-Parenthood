@@ -12,7 +12,7 @@ const plantSchema = new mongoose.Schema(
     expectedgrowth: { type:String, required: false},
     leafshape: { type:String, required: true},
     color: { type:String, required: true},
-//    bloom: Boolean
+    bloom: Boolean,
     bloomingseason: { type:String, required: false},
 
     soiltype: { type:String, required: true},

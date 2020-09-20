@@ -65,6 +65,11 @@ router.get('/', (req, res) => {
 // create route
 // __________________
 router.post('/', (req, res) => {
+  if (req.body.bloom === 'on') {
+    req.body.bloom = true;
+  } else {
+    req.body.bloom = false;
+  }
   Plant.create(req.body, (error, createdPlant) => {
     res.redirect('/plant')
   })
@@ -74,12 +79,18 @@ router.post('/', (req, res) => {
 // put route
 // __________________
 router.put('/:id', (req, res) => {
+  if (req.body.bloom === 'on') {
+    req.body.bloom = true;
+  } else {
+    req.body.bloom = false;
+  }
   Plant.findByIdAndUpdate(
     req.params.id,
     req.body,
     {new:true},
     (err, updateModel) => {
       res.redirect('/plant')
+
     })
 })
 

@@ -74,7 +74,7 @@ app.get('/' , (req, res) => {
 })
 
 //seed to db
-// Log.create(logSeed, (err, data) => {
+// Plant.create(PlantSeed, (err, data) => {
 //   if (err) console.log(err.message)
 //   console.log('added provided product data')
 // })
