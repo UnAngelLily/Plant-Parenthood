@@ -12,6 +12,7 @@ sessions.get('/new', (req, res) => {
 
 sessions.post('/', (req, res) => {
     // look for the users
+    console.log(req.body)
     User.findOne({username: req.body.username}, (err, foundUser) => {
       //  database has an error if mongod wasn't initalized
       if (err) {
