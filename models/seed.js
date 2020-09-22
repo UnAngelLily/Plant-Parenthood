@@ -35,28 +35,28 @@ module.exports = [
 
   },
   {// seed
-    name: ,
-    botanicalname: ,
+    name: Dessert Rose,
+    botanicalname: Adenium Obesum,
     familyname: ,
 
     currentimage: ,
 
     origin: ,
-    expectedgrowth: ,
-    leafshape: ,
-    color: ,
-    // bloom: ,
+    expectedgrowth: 3-9ft/ 3-5ft,
+    leafshape: evergreen ,
+    color: green stem with varying bloom colors of pink white or red,
+    bloom: ,
     bloomigseason: ,
 
     soiltype: ,
     humidity: ,
     temperatuer: ,
-    light: ,
+    light: full sun 500-2000 Lux,
     water: ,
     pottype: ,
     repotting: ,
     propogation: ,
-    commonissues: ,
+    commonissues: fungal leaf spot, mealybugs, scale and aphids ,
 
     dateacquired: ,
     storeacquired: ,

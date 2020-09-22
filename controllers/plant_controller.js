@@ -2,36 +2,46 @@ const express = require('express')
 const Plant = require('../models/plant.js')
 const router = express.Router()
 
+//_______________
+//authentication
+//_______________
+const isAuthenticated = (req, res, next) => {
+  if (req.session.currentUser) {
+    return next()
+  } else {
+    res.redirect('/sessions/new')
+  }
+}
+
 //___________________
 // new.ejs
 // __________________
 router.get('/new', (req, res) => {
-  Plant.findById(req.params.id, (error, foundPlant) => {
+  // Plant.findById(req.params.id, (error, foundPlant) => {
     res.render(
       'plant/new.ejs',
       {
-        plant:foundPlant,
-        // currentUser:req.session.currentUser
+        // plant:foundPlant,
+        currentUser:req.session.currentUser
       })
   })
-})
+// })
 //________________
 //show.ejs
 //________________
 router.get('/:id', (req, res) => {
-  // if(req.session.currentUser) {
+  if(req.session.currentUser) {
   Plant.findById(req.params.id, (error, foundPlant) => {
     res.render(
       'plant/show.ejs', {
         plant:foundPlant,
-        // currentUser: req.session.currentUser
+        currentUser: req.session.currentUser
       })
   })
-// } else {
-    // res.redirect('/session/new')
+} else {
+    res.redirect('/sessions/new')
     }
-  // }
-)
+})
 
 //___________________
 // edit.ejs
@@ -42,7 +52,7 @@ router.get('/:id/edit', (req, res) => {
       'plant/edit.ejs',
       {
         plant:foundPlant,
-        // currentUser: req.session.currentUser
+        currentUser: req.session.currentUser
       })
   })
 })
@@ -56,7 +66,7 @@ router.get('/', (req, res) => {
       'plant/index.ejs',
       {
         plant:allPlant,
-        // currentUser: req.session.currentUser
+        currentUser: req.session.currentUser
       })
   })
 })

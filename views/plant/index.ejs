@@ -10,7 +10,7 @@
       <% for (let i = 0; i < plant.length; i++) { %>
         <li>
           <!-- Plant Name/Link to the show.ejs -->
-          <img src="<%=plant[i].currentimage%>">
+          <img src="/<%=plant[i].currentimage%>">
           <button><a href="/plant/<%=plant[i].id%>">
             <%=plant[i].name;%></button>
             </ a><br />

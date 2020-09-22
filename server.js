@@ -20,14 +20,14 @@ const mongodbURI = process.env.MONGODBURI
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended:true}))
 // use public folder for static assets
-// app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
-app.use(express.static('public')) //serve up static files like css, put the items in folder called public
-// app.use(session({ // login and crypt the session
-//   secret: 'process.env.SECRET',
-//   resave: false,
-//   saveUninitalized: false
-//   })
-// )
+app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
+// app.use(express.static('public')) //serve up static files like css, put the items in folder called public
+app.use(session({ // login and crypt the session
+  secret: 'process.env.SECRET',
+  resave: false,
+  saveUninitalized: false
+  })
+)
 // app.use(express.cookieParser('secret'));
 // app.use(express.cookieSession());
 //https://stackoverflow.com/questions/18617091/secret-option-required-for-app-useexpress-cookiesession
@@ -63,10 +63,10 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //Routes located in Controllers directory
 const plantController = require('./controllers/plant_controller.js')
 app.use('/plant', plantController)
-// const sessionsController = require('./controllers/sessions_controller.js')
-// app.use('/sessions', sessionsController)
-// const usersController = require('./controllers/users_controller.js')
-// app.use('/users', usersController)
+const sessionsController = require('./controllers/sessions_controller.js')
+app.use('/sessions', sessionsController)
+const usersController = require('./controllers/users_controller.js')
+app.use('/users', usersController)
 
 //Route to redirect user
 app.get('/' , (req, res) => {
