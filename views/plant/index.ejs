@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>Plant Directory</title>
+    <!-- <meta charset="utf-8">
+    <title>Plant Directory</title> -->
+    <%- include('../partials/head.ejs') %>
   </head>
   <body>
-    <h1>Plant Directory</h1>
-    <ul>
-      <% for (let i = 0; i < plant.length; i++) { %>
-        <li>
-          <!-- Plant Name/Link to the show.ejs -->
-          <img src="/<%=plant[i].currentimage%>">
-          <button><a href="/plant/<%=plant[i].id%>">
-            <%=plant[i].name;%></button>
-            </ a><br />
-          <!-- Delete button/method-overrride/POST -->
-          <form action="/plant/<%=plant[i].id%>?_method=DELETE" method="POST">
-            <button><input type="submit" value="DELETE" /></button>
-          </form>
-          <!-- Edit button/Link to edit.ejs -->
-          <button><a href="/plant/<%=plant[i].id%>/edit">Edit Plant Entry</a></button>
-        </li>
-      <% } %>
-    </ul>
-    <nav>
-      <button><a href="/plant/new">Add New Plant</a></button>
-    </nav>
+
+    <div class="body-overlay">
+      <!-- ========== Header ========== -->
+      <%- include('../partials/header.ejs') %>
+      <!-- =========== Main =========== -->
+  <main>
+    <div>
+      <h1>Plant Parenthood</h1>
+        <ul>
+          <% for (let i = 0; i < plant.length; i++) { %>
+            <li>
+              <!-- Plant Name/Link to the show.ejs -->
+              <img src="/<%=plant[i].currentimage%>">
+              <button><a href="/plant/<%=plant[i].id%>">
+                <%=plant[i].name;%></button>
+                </ a><br />
+              <!-- Delete button/method-overrride/POST -->
+              <form action="/plant/<%=plant[i].id%>?_method=DELETE" method="POST">
+                <button><input type="submit" value="DELETE" /></button>
+              </form>
+              <!-- Edit button/Link to edit.ejs -->
+              <button><a href="/plant/<%=plant[i].id%>/edit">Edit Plant Entry</a></button>
+            </li>
+          <% } %>
+        </ul>
+        <nav>
+          <button><a href="/plant/new">Add New Plant</a></button>
+        </nav>
+    </div>
+  </main>
+    <!-- =========== Footer ============  -->
+    <%- include('../partials/footer.ejs') %>
   </body>
 </html>

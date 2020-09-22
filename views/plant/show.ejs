@@ -1,62 +1,68 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>Plant Entry Information</title>
+      <%- include('../partials/head.ejs') %>
+    <!-- <meta charset="utf-8">
+    <title>Plant Entry Information</title> -->
   </head>
   <body>
-  <h3>Plant Name Information</h3>
+    <div class="body-overlay">
+      <!-- ========== Header ========== -->
 
-    Name: <%=plant.name%><br />
-    Botanical Name: <%=plant.botanicalname%><br />
-    Family Name: <%=plant.familyname%><br />
+      <%- include('../partials/header.ejs') %>
+      <!-- =========== Main =========== -->
+      <main class="show-main">
+        <h3>Plant Name Information</h3>
+          Name: <%=plant.name%><br />
+          Botanical Name: <%=plant.botanicalname%><br />
+          Family Name: <%=plant.familyname%><br />
 
-    <img src="<%=plant.currentimage%>"><br />
+          <img src="<%=plant.currentimage%>"><br />
 
-  <h3>General Appearance</h3>
+        <h3>General Appearance</h3>
 
-    Location of Origin: <%=plant.origin%> <br />
-    Expected Growth: <%=plant.expectedgrowth%><br />
-    Shape: <%=plant.leafshape%><br />
-    Color: <%=plant.color%><br />
-    Bloom: <%if(plant.bloom === true) { %>
-        Plant Flowers
-      <% } else { %>
-        Plant does not bloom
-      <% } %><br />
-    Blooming Season and Condition: <%=plant.bloomingseason%><br />
+          Location of Origin: <%=plant.origin%> <br />
+          Expected Growth: <%=plant.expectedgrowth%><br />
+          Shape: <%=plant.leafshape%><br />
+          Color: <%=plant.color%><br />
+          Bloom: <%if(plant.bloom === true) { %>
+              Plant Flowers
+            <% } else { %>
+              Plant does not bloom
+            <% } %><br />
+          Blooming Season and Condition: <%=plant.bloomingseason%><br />
 
-  <h3>Care Taking Instruction</h3>
+        <h3>Care Taking Instruction</h3>
 
-    Soil Type: <%=plant.soiltype%><br />
-    Humidity : <%=plant.humidity%><br />
-    Temperature: <%=plant.temperature%><br />
-    Light: <%=plant.light%><br />
-    Water: <%=plant.water%><br />
-    Pot Type: <%=plant.pottype%><br />
-    Repotting: <%=plant.repotting%><br />
-    Propagation: <%=plant.propagation%><br />
-    Common Issues: <%=plant.commonissues%><br />
+          Soil Type: <%=plant.soiltype%><br />
+          Humidity : <%=plant.humidity%><br />
+          Temperature: <%=plant.temperature%><br />
+          Light: <%=plant.light%><br />
+          Water: <%=plant.water%><br />
+          Pot Type: <%=plant.pottype%><br />
+          Repotting: <%=plant.repotting%><br />
+          Propagation: <%=plant.propagation%><br />
+          Common Issues: <%=plant.commonissues%><br />
 
-  <h3>Acquired Information</h3>
+        <h3>Acquired Information</h3>
 
-    Date Acquired: <%=plant.dateacquired%><br />
-    Store Acquired: <%=plant.storeacquired%><br />
-    <img src="<%=plant.firstimage%>"><br />
+          Date Acquired: <%=plant.dateacquired%><br />
+          Store Acquired: <%=plant.storeacquired%><br />
+          <img src="<%=plant.firstimage%>"><br />
 
-<!-- set an event listener to turn in to a carosuel -->
-  <h3>Plant Entry</h3>
+        <h3>Plant Entry</h3>
 
-    Last Water: <%=plant.lastwatered%><br />
-    Last Repotted: <%=plant.lastrepotting%><br />
-    Entry Date: <%=plant.entrydate%><br />
-    <img src="<%=plant.updateimage%>"><br />
-    Entry: <%=plant.entry%><br />
+          Last Water: <%=plant.lastwatered%><br />
+          Last Repotted: <%=plant.lastrepotting%><br />
+          Entry Date: <%=plant.entrydate%><br />
+          <img src="<%=plant.updateimage%>"><br />
+          Entry: <%=plant.entry%><br />
 
-  <button type="button" name="button"><a href="/plant/<%=plant._id%>/edit">Edit</a></button>
-  <br />
-    <nav>
-      <button><a href="/plant/">Back to Plant Directory</a></button>
-    </nav>
+        <button type="button" name="button"><a href="/plant/<%=plant._id%>/edit">Edit</a></button>
+        <br />
+      </main>
+      <!-- ========== Footer =========== -->
+      <%- include('../partials/footer.ejs') %>
+    </div>
   </body>
 </html>

@@ -1,53 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>Edit Plant Information</title>
+    <%- include('../partials/head.ejs') %>
+    <!-- <meta charset="utf-8">
+    <title>Edit Plant Information</title> -->
   </head>
   <body>
-    <h1>Edit Plant Namey</h1>
-    <form action="/plant/<%=plant.id%>?_method=PUT" method="POST">
-      Name:<input type="text" name="name" value="<%=plant.name%>"/><br />
-      Botanical Name:<input type="text" name="botanicalnamen%>" value="<%=plant.botanicalname%>"/><br />
-      Family Name:<input type="text" name="familyname" value="<%=plant.familyname%>"/><br />
+      <div class="body-overlay">
+        <!-- ========== Header ========== -->
+        <%- include('../partials/header.ejs') %>
+        <!-- =========== Main =========== -->
+        <main>
+          <div>
+            <h1>Edit Plant Namey</h1>
+              <form action="/plant/<%=plant.id%>?_method=PUT" method="POST">
+                Name:<input type="text" name="name" value="<%=plant.name%>"/><br />
+                Botanical Name:<input type="text" name="botanicalnamen%>" value="<%=plant.botanicalname%>"/><br />
+                Family Name:<input type="text" name="familyname" value="<%=plant.familyname%>"/><br />
 
 
-      Recent Photo of Plant:<input type="text" name="currentimage" value="<%=plant.currentimage%>"/><br />
+                Recent Photo of Plant:<input type="text" name="currentimage" value="<%=plant.currentimage%>"/><br />
 
-    <h3>Edit General Appearance</h3>
-      Origin:<input type="text" name="origin" value="<%=plant.origin%>"/><br />
-      Expected Growth:<input type="text" name="expectedgrowth" value="<%=plant.expectedgrowth%>"/><br />
-      Leaf Shape:<input type="text" name="leafshape" value="<%=plant.leafshape%>"/><br />
-      Color:<input type="text" name="color" value="<%=plant.color%>"/><br />
-      Bloom?:
-      <input type="checkbox" name="bloom"
-        <%if(plant.bloom === "on") { %> checked <% } %> /><br />
-      Blooming Season<input type="text" name="bloomingseason" value="<%=plant.bloomingseason%>"/><br />
+            <h3>Edit General Appearance</h3>
+              Origin:<input type="text" name="origin" value="<%=plant.origin%>"/><br />
+              Expected Growth:<input type="text" name="expectedgrowth" value="<%=plant.expectedgrowth%>"/><br />
+              Leaf Shape:<input type="text" name="leafshape" value="<%=plant.leafshape%>"/><br />
+              Color:<input type="text" name="color" value="<%=plant.color%>"/><br />
+              Bloom?:
+              <input type="checkbox" name="bloom"
+                <%if(plant.bloom === "on") { %> checked <% } %> /><br />
+              Blooming Season<input type="text" name="bloomingseason" value="<%=plant.bloomingseason%>"/><br />
 
-    <h3>Edit Care Taking Information</h3>
-      Soil Type:<input type="text" name="soiltype" value="<%=plant.soiltype%>"/><br />
-      Humidity Level:<input type="text" name="humidity" value="<%=plant.humidity%>"/><br />
-      Temperature:<input type="text" name="temperature" value="<%=plant.temperature%>"/><br />
-      Light:<input type="text" name="light" value="<%=plant.light%>"/><br />
-      Water:<input type="text" name="water" value="<%=plant.water%>"/><br />
-      Pot Type:<input type="text" name="pottype" value="<%=plant.pottype%>"/><br />
-      When to Repot:<input type="text" name="repotting" value="<%=plant.repotting%>"/><br />
-      Propagation:<input type="text" name="propagation" value="<%=plant.propagation%>"/><br />
-      Common Issues:<input type="text" name="commonissues" value="<%=plant.commonissues%>"/><br />
+            <h3>Edit Care Taking Information</h3>
+              Soil Type:<input type="text" name="soiltype" value="<%=plant.soiltype%>"/><br />
+              Humidity Level:<input type="text" name="humidity" value="<%=plant.humidity%>"/><br />
+              Temperature:<input type="text" name="temperature" value="<%=plant.temperature%>"/><br />
+              Light:<input type="text" name="light" value="<%=plant.light%>"/><br />
+              Water:<input type="text" name="water" value="<%=plant.water%>"/><br />
+              Pot Type:<input type="text" name="pottype" value="<%=plant.pottype%>"/><br />
+              When to Repot:<input type="text" name="repotting" value="<%=plant.repotting%>"/><br />
+              Propagation:<input type="text" name="propagation" value="<%=plant.propagation%>"/><br />
+              Common Issues:<input type="text" name="commonissues" value="<%=plant.commonissues%>"/><br />
 
-    <h3>Edit Plant Acquired</h3>
-      Date Acquired:<input type="text" name="dateacquired" value="<%=plant.dateacquired%>"/><br />
-      Store Acquired From:<input type="text" name="storeacquired" value="<%=plant.storeacquired%>"/><br />
-      Image of when acquired:<input type="text" name="firstimage" value="<%=plant.firstimage%>"/><br />
+            <h3>Edit Plant Acquired</h3>
+              Date Acquired:<input type="text" name="dateacquired" value="<%=plant.dateacquired%>"/><br />
+              Store Acquired From:<input type="text" name="storeacquired" value="<%=plant.storeacquired%>"/><br />
+              Image of when acquired:<input type="text" name="firstimage" value="<%=plant.firstimage%>"/><br />
 
-    <h3>Edit Plant Entry</h3>
-      Last Date Watered:<input type="text" name="lastwatered" value="<%=plant.lastwatered%>"/><br />
-      Last Date Repotted:<input type="text" name="lastrepotting" value="<%=plant.lastrepotting%>"/><br />
-      Entry Date:<input type="text" name="entrydate" value="<%=plant.entrydate%>"/><br />
-      Image Update:<input type="text" name="updateimage" value="<%=plant.updateimage%>"/><br />
-      Entry:<input type="text" name="entry" value="<%=plant.entry%>"/><br />
+            <h3>Edit Plant Entry</h3>
+              Last Date Watered:<input type="text" name="lastwatered" value="<%=plant.lastwatered%>"/><br />
+              Last Date Repotted:<input type="text" name="lastrepotting" value="<%=plant.lastrepotting%>"/><br />
+              Entry Date:<input type="text" name="entrydate" value="<%=plant.entrydate%>"/><br />
+              Image Update:<input type="text" name="updateimage" value="<%=plant.updateimage%>"/><br />
+              Entry:<input type="text" name="entry" value="<%=plant.entry%>"/><br />
 
-    <input type="submit" value="Submit Changes" />
-    </form>
+            <input type="submit" value="Submit Changes" />
+        </form>
+       </div>
+     </main>
+     <!-- ========== Footer ========== -->
+     <%- include('../partials/footer.ejs') %>
+   </div>
   </body>
 </html>
