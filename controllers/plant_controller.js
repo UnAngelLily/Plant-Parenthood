@@ -33,7 +33,7 @@ router.get('/new', (req, res) => {
     res.render(
       'plant/new.ejs',
       {
-        plant:foundPlant,
+        // plant:foundPlant,
         currentUser:req.session.currentUser
       })
   })
