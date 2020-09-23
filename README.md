@@ -10,3 +10,12 @@ The biggest challenges was the syntax and the continuous bug hunt. Each time a n
 Special thanks to Mimi, who tolerated the strangest seed bug hunt for 2 hours, provided moral support  and searched over 15 different way to figure out the issue around my seed. While the solution didn't come to me while we were searching together I somehow managed to narrow into a solution.
 
 Future features and unresolved issues include, adding a carousel to the entries for it to be functional for recording keeping, and the "seed" link in the header. I originally wanted to add a carousel and a second model in order to have a function to enter and then click through multiple entries. I also wanted the seed button to automatically populate the seed in my database. 
+
+
+THINGS TO CHANGE AND ADD!
+The add button stopped working on the heroku app so look at the button. Check out why that stopped working.
+Adding a carosuel to the plant entries.
+More user functionality to make sure multiple people can use it without deleting and editing other's stuff.
+More messages for error and models .
+Add artist credit for the graphic.
+Way to add photos without having to link and upload it onto imgur?
