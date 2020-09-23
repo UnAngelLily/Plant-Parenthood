@@ -1,7 +1,6 @@
 const express = require('express')
 const Plant = require('../models/plant.js')
 const router = express.Router()
-// const seed = require('../models/seed.js')
 
 //_______________
 //authentication
@@ -124,7 +123,7 @@ router.delete('/:id', (req, res) => {
 //   })
 // })
 router.get('/setup/seed', (req, res) => {
-  plant.create(
+  Plant.create(
     [
      { // seed ============================================================
        name: "Haworthia",
@@ -159,7 +158,8 @@ router.get('/setup/seed', (req, res) => {
        entrydate: "September 20th 2020",
        updateimage: "https://i.imgur.com/eSLz7BO.jpg",
        entry: "Plant appears to be doing well. Offsets  are in a container next to the original plant. Due to it\'s stretch the mother plant is being held up with assistance by being tied to a stick to hoist it up. Plant tends to bow when unassisted. There still appears to be a nat problem with the plant as it may have root rot from overwatering so a moisture meter will determine when the soil is dry enough for it\'s next water cycle.",
-     }],
+     }
+   ],
      (error, data) => {
        res.redirect("/plant");
      })

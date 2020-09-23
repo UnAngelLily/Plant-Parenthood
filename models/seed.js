@@ -10,7 +10,7 @@ module.exports = [
     expectedgrowth: "3in x 6in",
     leafshape: "Rosette",
     color: "Green with transparent window-like petals",
-    bloom: (plant.bloom === true),
+    // bloom: (plant.bloom === true),
     bloomigseason: "summer monocot-blooms multiple times white",
 
     soiltype: "Quick draining mixtures such as  porours pumice, aquarium gravel, or perlite. Avoid sand mixed soil as it clogs up pores",

@@ -7,6 +7,7 @@ const methodOverride  = require('method-override')
 const mongoose = require('mongoose')
 require('dotenv').config()
 
+
 //__________________
 //Configuration
 //__________________
@@ -75,9 +76,10 @@ app.get('/' , (req, res) => {
 })
 
 //seed to db
-// Plant.create(PlantSeed, (err, data) => {
+// Seed.create(seed, (err, data) => {
 //   if (err) console.log(err.message)
 //   console.log('planted some seeds')
+//   res.redirect('plant/')
 // })
 
 //__________________
