@@ -14,6 +14,7 @@ const app = express()
 const db = mongoose.connection
 const PORT = process.env.PORT || 3003; // control of the PORT, 3003 is the fall back PORT // Allow use of Heroku's port or your own local port, depending on the environment
 const mongodbURI = process.env.MONGODBURI
+
 //__________________
 //Middleware
 //__________________
@@ -21,7 +22,7 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended:true}))
 // use public folder for static assets
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
-// app.use(express.static('public')) //serve up static files like css, put the items in folder called public
+app.use(express.static('public')) //serve up static files like css, put the items in folder called public
 app.use(session({ // login and crypt the session
   secret: 'process.env.SECRET',
   resave: false,
@@ -76,7 +77,7 @@ app.get('/' , (req, res) => {
 //seed to db
 // Plant.create(PlantSeed, (err, data) => {
 //   if (err) console.log(err.message)
-//   console.log('added provided product data')
+//   console.log('planted some seeds')
 // })
 
 //__________________

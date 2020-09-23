@@ -2,12 +2,10 @@
 /* ==== General ===== */
 /* ================== */
 body {
-  background-color: red;
-  /* background-image: url('https://i.imgur.com/5vzH6UC.jpg'); */
+  background-image: url('https://i.imgur.com/5vzH6UC.jpg');
   background-size: cover;
-  margin: 0;
-  padding: 0;
   font-family: 'Architects Daughter', cursive;
+  align-items: center;
 }
 a {
   text-decoration: none;
@@ -28,16 +26,17 @@ a {
   box-sizing: border-box;
 }
 main, header, footer {
+  position:relative;
   width: 80%;
   margin: 0 auto;
   padding: 1em 3em;
   box-sizing: border-box;
   background: #f9f9f9;
   border-radius: 1em;
-  text-align: center;
   box-shadow: 1px 1px 5px #888;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -47,17 +46,19 @@ main, header, footer {
 header {
   margin-bottom: 2em;
 }
+
 header ul {
   margin: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 header li {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
-  font-size: 0.8em;
+  font-size: 1em;
   margin-left: 1em;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 header li a {
   color: rgb(152, 130, 110);
@@ -79,7 +80,7 @@ li {
   margin: 1em 0;
   list-style: none;
 }
-li a {
+li a, p {
   color: rgb(129, 110, 124);
   text-shadow: 1px 1px #eee;
   font-size: 1.1em;
@@ -100,6 +101,7 @@ li a:hover:after {
 }
 main h1 {
   display: inline-block;
+  align-items: center;
   color: rgb(142, 89, 81);
   border-bottom: 4px solid rgb(219, 207, 197);
   padding-bottom: 0.2em;
@@ -124,18 +126,13 @@ main.show-main {
 h3 {
   margin-top: 0.5em;
 }
-img {
-  width: 70%;
-  border-radius: 1em;
-}
 .back-btn {
-  display: block;
   width: 70%;
   margin: 1.5em auto 1.3em auto;
   padding-top: 0.5em;
-  border-top: 5px solid rgba(219, 207, 197, 0.5);
+  border-top: 5px solid #ffb84d);
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: rgb(142, 89, 81);
   transition: 0.3s ease-in-out;
 }
