@@ -122,48 +122,48 @@ router.delete('/:id', (req, res) => {
 //     console.log('planting seeds')
 //   })
 // })
-router.get('/setup/seed', (req, res) => {
-  Plant.create(
-    [
-     { // seed ============================================================
-       name: "Haworthia",
-       botanicalname: "Haworthia Obtusa",
-       familyname: "Asphodelaceae Asphodeloideae",
-
-       currentimage:"https://i.imgur.com/ZMcaWCo.png",
-
-       origin: "South Africa (Eastern Cape)",
-       expectedgrowth: "3in x 6in",
-       leafshape: "Rosette",
-       color: "Green with transparent window-like petals",
-       bloom: (plant.bloom === true),
-       bloomigseason: "summer monocot-blooms multiple times white",
-
-       soiltype: "Quick draining mixtures such as  porours pumice, aquarium gravel, or perlite. Avoid sand mixed soil as it clogs up pores",
-       humidity: "low under 40%",
-       temperature: "85-60F",
-       light: "low indoor light or filtered/partial sun, 100-1000 Lux",
-       water: "Deep infrequent watering with soil is bone dry. Plant is dormant in the winter and therefore requires less watering",
-       pottype: "terracotta",
-       repotting: "every 2-3 years",
-       propgation: "When new offsets grow from clumps around the base they can be left to develeop into a dense clump or pulled off and transplanted",
-       commonissues: "Root rot fron overwatering and sunburns from too much light",
-
-       dateacquired: "January 25th 2019",
-       storeacquired: "Denver Colorado - Nursery",
-       firstimage: "https://i.imgur.com/yrWy3Vh.jpg",
-
-       lastwatered: "August 19th 2020",
-       lastrepotting: "July 2020",
-       entrydate: "September 20th 2020",
-       updateimage: "https://i.imgur.com/eSLz7BO.jpg",
-       entry: "Plant appears to be doing well. Offsets  are in a container next to the original plant. Due to it\'s stretch the mother plant is being held up with assistance by being tied to a stick to hoist it up. Plant tends to bow when unassisted. There still appears to be a nat problem with the plant as it may have root rot from overwatering so a moisture meter will determine when the soil is dry enough for it\'s next water cycle.",
-     }
-   ],
-     (error, data) => {
-       res.redirect("/plant");
-     })
-   })
+// router.get('/setup/seed', (req, res) => {
+//   Plant.create(
+//     [
+//      { // seed ============================================================
+//        name: "Haworthia",
+//        botanicalname: "Haworthia Obtusa",
+//        familyname: "Asphodelaceae Asphodeloideae",
+//
+//        currentimage:"https://i.imgur.com/ZMcaWCo.png",
+//
+//        origin: "South Africa (Eastern Cape)",
+//        expectedgrowth: "3in x 6in",
+//        leafshape: "Rosette",
+//        color: "Green with transparent window-like petals",
+//        bloom: (plant.bloom === true),
+//        bloomigseason: "summer monocot-blooms multiple times white",
+//
+//        soiltype: "Quick draining mixtures such as  porours pumice, aquarium gravel, or perlite. Avoid sand mixed soil as it clogs up pores",
+//        humidity: "low under 40%",
+//        temperature: "85-60F",
+//        light: "low indoor light or filtered/partial sun, 100-1000 Lux",
+//        water: "Deep infrequent watering with soil is bone dry. Plant is dormant in the winter and therefore requires less watering",
+//        pottype: "terracotta",
+//        repotting: "every 2-3 years",
+//        propgation: "When new offsets grow from clumps around the base they can be left to develeop into a dense clump or pulled off and transplanted",
+//        commonissues: "Root rot fron overwatering and sunburns from too much light",
+//
+//        dateacquired: "January 25th 2019",
+//        storeacquired: "Denver Colorado - Nursery",
+//        firstimage: "https://i.imgur.com/yrWy3Vh.jpg",
+//
+//        lastwatered: "August 19th 2020",
+//        lastrepotting: "July 2020",
+//        entrydate: "September 20th 2020",
+//        updateimage: "https://i.imgur.com/eSLz7BO.jpg",
+//        entry: "Plant appears to be doing well. Offsets  are in a container next to the original plant. Due to it\'s stretch the mother plant is being held up with assistance by being tied to a stick to hoist it up. Plant tends to bow when unassisted. There still appears to be a nat problem with the plant as it may have root rot from overwatering so a moisture meter will determine when the soil is dry enough for it\'s next water cycle.",
+//      }
+//    ],
+//      (error, data) => {
+//        res.redirect("/plant");
+//      })
+//    })
 
 
 

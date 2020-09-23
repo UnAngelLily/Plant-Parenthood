@@ -80,7 +80,7 @@ app.get('/' , (req, res) => {
 //   if (err) console.log(err.message)
 //   console.log('planted some seeds')
 //   res.redirect('plant/')
-// })
+// }) this doesn't work....
 
 //__________________
 //Listener
