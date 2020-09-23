@@ -21,7 +21,7 @@ router.get('/seed', (req, res) => {
   Plant.create(plantSeed, (err, data) => {
     // if (err) console.log(err.message)
     console.log('planted some seeds'),
-    res.redirect('plant/')
+    res.redirect('/plant')
   })
 })
 
