@@ -17,7 +17,7 @@
           Botanical Name: <%=plant.botanicalname%><br />
           Family Name: <%=plant.familyname%><br />
 
-          <img src="<%=plant.currentimage%>"><br />
+          <img src="<%=plant.currentimage%>" style="width: 500px"><br />
 
         <h3>General Appearance</h3>
 
@@ -48,21 +48,22 @@
 
           Date Acquired: <%=plant.dateacquired%><br />
           Store Acquired: <%=plant.storeacquired%><br />
-          <img src="<%=plant.firstimage%>"><br />
+          <img src="<%=plant.firstimage%>" style="width: 500px"><br />
 
         <h3>Plant Entry</h3>
 
           Last Water: <%=plant.lastwatered%><br />
           Last Repotted: <%=plant.lastrepotting%><br />
           Entry Date: <%=plant.entrydate%><br />
-          <img src="<%=plant.updateimage%>"><br />
+          <img src="<%=plant.updateimage%>" style="width: 500px"><br />
           Entry: <%=plant.entry%><br />
 
-        <button type="button" name="button"><a href="/plant/<%=plant._id%>/edit">Edit</a></button>
+        <a href="/plant/<%=plant._id%>/edit">Edit</a>
         <br />
       </main>
       <!-- ========== Footer =========== -->
       <%- include('../partials/footer.ejs') %>
+
     </div>
   </body>
 </html>

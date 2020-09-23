@@ -101,12 +101,13 @@ li a:hover:after {
 }
 main h1 {
   display: inline-block;
-  align-items: center;
   color: rgb(142, 89, 81);
   border-bottom: 4px solid rgb(219, 207, 197);
   padding-bottom: 0.2em;
   width: 70%;
   margin-bottom: 0.5em;
+  align-items: center;
+  justify-content: center;
 }
 main > div {
   width: 49%;
@@ -144,7 +145,6 @@ h3 {
 /* ====== New ======= */
 /* ================== */
 input[type="text"], input[type="submit"] {
-  width: 60%;
   padding: 1em;
   border: 0px;
   border-radius: 0.5em;
@@ -152,7 +152,6 @@ input[type="text"], input[type="submit"] {
   margin: 0.5em 0;
 }
 input[type="submit"] {
-  width: 61%;
   font-family: 'Architects Daughter', cursive;
   font-weight: 700;
   text-transform: uppercase;

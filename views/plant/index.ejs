@@ -17,16 +17,22 @@
         <ul>
           <% for (let i = 0; i < plant.length; i++) { %>
             <li>
-              <!-- Plant Name/Link to the show.ejs -->x
-              <button><a href="/plant/<%=plant[i].id%>">
-                <%=plant[i].name;%></button>
-                </ a><br />
-              <!-- Delete button/method-overrride/POST -->
+
               <form action="/plant/<%=plant[i].id%>?_method=DELETE" method="POST">
-                <button><input type="submit" value="x" /></button>
+
+                <!-- Edit button/Link to edit.ejs -->
+                  <a href="/plant/<%=plant[i].id%>/edit">
+                    Edit Plant Entry</a>
+
+                <!-- Delete button/method-overrride/POST -->
+                  <input type="submit" value="x" style="font-size:7px;"/>
+
+                <!-- Plant Name/Link to the show.ejs -->
+                  <a href="/plant/<%=plant[i].id%>">
+                    <%=plant[i].name;%>
+                  </ a>
+
               </form>
-              <!-- Edit button/Link to edit.ejs -->
-              <button><a href="/plant/<%=plant[i].id%>/edit">Edit Plant Entry</a></button>
             </li>
           <% } %>
         </ul>

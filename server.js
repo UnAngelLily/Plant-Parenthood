@@ -20,7 +20,7 @@ const mongodbURI = process.env.MONGODBURI
 //Middleware
 //__________________
 app.use(methodOverride('_method'))
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({extended:false}))
 // use public folder for static assets
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 app.use(express.static('public')) //serve up static files like css, put the items in folder called public
@@ -74,13 +74,6 @@ app.use('/users', usersController)
 app.get('/' , (req, res) => {
   res.redirect('plant/')
 })
-
-//seed to db
-// Seed.create(seed, (err, data) => {
-//   if (err) console.log(err.message)
-//   console.log('planted some seeds')
-//   res.redirect('plant/')
-// }) this doesn't work....
 
 //__________________
 //Listener
