@@ -1,4 +1,4 @@
-# project2
+# Plant Parenthood
 Website: https://frozen-oasis-03811.herokuapp.com/plant
 
 The goal of the website is to provide a way to record data in regards to plant keeping. The problem I was having as a plant fanatic is that many plants have different needs in light, soil, repotting, grooming and so on. Since the plants come from many different environments and nurseries it creates the problem of constantly having to research caretaking of each plant. I have over 105 different kinds of plants so I wanted to create a track to compile caretaking information in order to organize my collect.
